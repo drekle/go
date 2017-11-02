@@ -1,0 +1,33 @@
+// Generate by
+//   protoc message.proto --go_out=plugins=grpc:.
+syntax = "proto3";
+
+package api;
+
+// The greeting service definition.
+service Scanner {
+  rpc start (UrlRequest) returns (StartResponse) {}
+  rpc stop (UrlRequest) returns (StopResponse) {}
+  rpc list (ListRequest) returns (ListResponse) {}
+}
+
+// The request message containing the user's name.
+message UrlRequest {
+  string url = 1;
+}
+
+message ListRequest {
+// Empty request for future support
+}
+
+message StartResponse {
+// Empty response for future support
+}
+
+message StopResponse {
+// Empty response for future support
+}
+
+message ListResponse {
+    string data = 1;
+}
