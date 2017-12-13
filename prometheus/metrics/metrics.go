@@ -2,7 +2,12 @@ package metrics
 
 import "github.com/prometheus/client_golang/prometheus"
 
-type TickMetric interface {
+type Metric interface {
 	prometheus.Collector
 	prometheus.Metric
+}
+
+type TickMetric interface {
+	Metric
+	Tick()
 }
