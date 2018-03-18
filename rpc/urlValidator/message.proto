@@ -1,0 +1,21 @@
+// Generate by
+//   protoc message.proto --go_out=plugins=grpc:.
+//   protoc message.proto --java_out=.
+syntax = "proto3";
+
+package api;
+
+// The greeting service definition.
+service URL {
+  rpc register (UrlRequest) returns (UrlResponse) {}
+}
+
+// The request message containing the user's name.
+message UrlRequest {
+  string url = 1;
+}
+
+message UrlResponse {
+// Empty request for future support
+  bool valid = 1;
+}
